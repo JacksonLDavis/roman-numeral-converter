@@ -181,6 +181,7 @@ class RomanNumeralConverter {
         // test cases
         RomanNumeralConverter rnc = new RomanNumeralConverter();
         int wrongConversions = 0;
+        int exceptions = 0;
         string rn;
         int nm;
         for (int i = 1; i <= 1000; i++) {
@@ -196,6 +197,7 @@ class RomanNumeralConverter {
             }
             catch (Exception e) {
                 Console.WriteLine(rn + " is not a valid Roman numeral");
+                exceptions += 1;
             }
         }
 
@@ -213,9 +215,11 @@ class RomanNumeralConverter {
             }
             catch (Exception e) {
                 Console.WriteLine(rn + " is not a valid Roman numeral");
+                exceptions += 1;
             }
         }
 
+        Console.WriteLine("Test completed with " + exceptions + " exceptions");
         Console.WriteLine("Test completed with " + wrongConversions + " wrong conversions");
     }
 }
