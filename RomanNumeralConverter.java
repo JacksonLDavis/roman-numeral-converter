@@ -180,6 +180,7 @@ public class RomanNumeralConverter {
     public static void main(String[] args) {
         // test cases
         RomanNumeralConverter rnc = new RomanNumeralConverter();
+        int exceptions = 0;
         int wrongConversions = 0;
         String rn;
         Integer nm;
@@ -196,6 +197,7 @@ public class RomanNumeralConverter {
             }
             catch (RuntimeException e) {
                 System.out.println(rn + " is not a valid Roman numeral");
+                exceptions += 1;
             }
         }
 
@@ -213,9 +215,11 @@ public class RomanNumeralConverter {
             }
             catch (RuntimeException e) {
                 System.out.println(rn + " is not a valid Roman numeral");
+                exceptions += 1;
             }
         }
 
+        System.out.println("Test completed with " + exceptions + " exceptions");
         System.out.println("Test completed with " + wrongConversions + " wrong conversions");
     }
 }
