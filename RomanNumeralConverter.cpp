@@ -189,6 +189,7 @@ int main() {
     // test cases
     RomanNumeralConverter rnc;
     int wrongConversions = 0;
+    int exceptions = 0;
     string rn;
     int nm;
     for (int i = 1; i <= 1000; i++) {
@@ -203,7 +204,8 @@ int main() {
             }
         }
         catch (int errNum) {
-            cout << errNum << ": " << rn << " is not a valid Roman numeral";
+            cout << errNum << ": " << rn << " is not a valid Roman numeral\n";
+            exceptions += 1;
         }
     }
 
@@ -220,11 +222,13 @@ int main() {
             }
         }
         catch (int errNum) {
-            cout << errNum << ": " << rn << " is not a valid Roman numeral" << "\n";
+            cout << errNum << ": " << rn << " is not a valid Roman numeral\n";
+            exceptions += 1;
         }
     }
 
-    cout << "Test completed with " << wrongConversions << " wrong conversions" << "\n";
+    cout << "Test completed with " << exceptions << " exceptions\n";
+    cout << "Test completed with " << wrongConversions << " wrong conversions\n";
     
     return 0;
 }
