@@ -97,6 +97,7 @@ def convert_roman_numeral_to_number(rom):
 
 
 # test cases
+exceptions = 0
 wrong_conversions = 0
 for i in range(1000):
     rn = convert_number_to_roman_numeral(i + 1)
@@ -109,6 +110,7 @@ for i in range(1000):
             wrong_conversions += 1
     except:
         print(rn + " is not a valid Roman numeral")
+        exceptions += 1
 
 thousands = [1001, 1005, 1010, 1050, 1100, 1500, 1999, 2000, 3000, 4000, 5000, 10000]
 for t in thousands:
@@ -122,6 +124,8 @@ for t in thousands:
             wrong_conversions += 1
     except:
         print(rn + " is not a valid Roman numeral")
+        exceptions += 1
 
 
+print("Test completed with " + str(exceptions) + " exceptions")
 print("Test completed with " + str(wrong_conversions) + " wrong conversions")
